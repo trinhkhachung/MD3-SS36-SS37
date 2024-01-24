@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" name="" id="in1"> <br>
+    <input type="number" name="" id="in2"> <br>
+    <button onclick="add()">Click</button> <br>
+    <input type="number" name="" id="in3"> <br>
+</body>
+<script>
+    function add() {
+        let a = document.getElementById('in1').value
+        let b = document.getElementById('in2').value
+        let c = parseInt(a) + parseInt(b);
+        console.log(c);
+        document.getElementById('in3').value = c
+    }
+</script>
+
+</html>

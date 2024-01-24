@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="return check();">
+        <label for="student_id">student_id</label>
+        <input type="text" name="" id="id" /><br />
+        <label for="student_name">student_name</label>
+        <input type="text" name="" id="name" /><br />
+        <label for="age">age</label>
+        <input type="number" name="" id="age" /><br />
+        <label for="phone">phone</label>
+        <input type="number" name="" id="phone" /><br />
+        <label for="email">email</label>
+        <input type="text" name="" id="email" /><br />
+        <input type="submit" name="" id="Create" />
+    </form>
+    <ul class="display"></ul>
+    <script>
+        function validate_email(email) {
+            let email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return email_regex.test(email);
+        }
+
+        function validate_phone(phone) {
+            let phone_regex = /^(0\d{9,10})$/;
+            return phone_regex.test(phone);
+        }
+
+        function check() {
+            let id = document.getElementById("id").value;
+            let name = document.getElementById("name").value;
+            let age = Number(document.getElementById("age").value);
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+
+            if (id.length < 6) return false;
+            if (name === "") return false;
+            if (age < 18) return false;
+            if (validate_phone(phone) === false) return false;
+            if (validate_email(email) === false) return false;
+
+            let display = document.querySelector(".display");
+            display.innerHTML =
+                id + "<br>" + name + "<br>" + age + "<br>" + phone + "<br>" + email;
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

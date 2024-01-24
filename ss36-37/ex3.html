@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="in">
+    <div id="div">
+
+    </div>
+    <script>
+        let input = document.getElementById("in");
+        input.addEventListener("input", inputs)
+        function inputs() {
+            let div = document.getElementById("div");
+            div.textContent = input.value;
+            console.log(div.textContent);
+        }
+
+    </script>
+</body>
+
+</html>
